@@ -4,10 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TAP Studio | タップダンススタジオ</title>
-        <meta name="description" content="新宿のタップダンススタジオです">
+        <meta name="description" content="新宿のタップダンススタジオ TAP Studio。初心者から経験者まで、あなたのビートを響かせます。">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Oswald:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -16,170 +17,162 @@
                 <a class="header-logo" href="index.html">TAP Studio</a>
                 <nav class="header-nav" aria-label="メインメニュー">
                     <ul>
-                        <li><a href="#class">Class</a></li>
-                        <li><a href="#schedule">Schedule</a></li>
-                        <li><a href="#fee">Fee</a></li>
-                        <li><a href="#instructor">Instructor</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="class.html">Class</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="fee.html">Fee</a></li>
+                        <li><a href="instructor.html">Instructor</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
 
         <section class="hero" aria-label="メインビジュアル">
-            <div class="hero-bg" role="img" aria-label="スタジオの雰囲気をイメージした背景"></div>
-            <div class="hero-inner">
-                <div class="hero-copy">
-                    <p class="hero-tagline-ja">踏み出す一歩が、リズムに変わる。</p>
-                    <p class="hero-tagline-en">FIND YOUR BEAT</p>
-                </div>
-                <a class="hero-cta" href="#contact">体験レッスン申込はこちら</a>
+            <img class="hero-media" src="images/background-image.png" alt="タップダンスのステージイメージ">
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-copy">
+                <p class="hero-tagline-ja">踏み出す一歩が、リズムに変わる。</p>
+                <p class="hero-tagline-en">FIND YOUR BEAT</p>
             </div>
+            <a class="hero-cta" href="contact.html">体験レッスン申し込みはこちら</a>
         </section>
 
-        <main>
-            <section class="section section-message" id="message">
-                <div class="section-bg-letter" aria-hidden="true">MESSAGE</div>
-                <div class="section-inner">
-                    <h2 class="section-heading-stack">
-                        <span class="heading-ja">踏み出す一歩が、リズムに変わる。</span>
-                        <span class="heading-en">FIND YOUR BEAT</span>
-                    </h2>
-                    <p class="section-lead">
-                        TAP Studio は、はじめての方から経験者まで、リズムと一緒に歩める場所です。音に乗る楽しさを、気負わずに味わってください。
-                    </p>
-                </div>
-            </section>
-
-            <section class="section section-features" id="class">
-                <div class="section-bg-letter section-bg-letter--left" aria-hidden="true">F</div>
-                <div class="section-inner">
-                    <h2 class="section-title">Features</h2>
-                    <div class="features-list">
-                        <article class="feature feature--left">
-                            <span class="feature-num" aria-hidden="true">1</span>
-                            <div class="feature-body">
-                                <h3 class="feature-title-ja">初心者大歓迎</h3>
-                                <p class="feature-title-en">Welcome!</p>
-                                <p class="feature-desc">子供から大人まで幅広い年齢層の方が楽しんでいます</p>
-                            </div>
-                        </article>
-                        <article class="feature feature--right">
-                            <span class="feature-num" aria-hidden="true">2</span>
-                            <div class="feature-body">
-                                <h3 class="feature-title-ja">プロの指導</h3>
-                                <p class="feature-title-en">Professional</p>
-                                <p class="feature-desc">現役ダンサーから直接学べる環境です</p>
-                            </div>
-                        </article>
-                        <article class="feature feature--left">
-                            <span class="feature-num" aria-hidden="true">3</span>
-                            <div class="feature-body">
-                                <h3 class="feature-title-ja">手ぶらで通える</h3>
-                                <p class="feature-title-en">READY TO TAP!</p>
-                                <p class="feature-desc">タップシューズは無料でレンタル可能。駅近の好立地で、お仕事帰りにもスマートに楽しめます。</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section section-news" id="schedule">
-                <div class="section-bg-letter section-bg-letter--left" aria-hidden="true">N</div>
-                <div class="section-inner">
-                    <h2 class="section-title">NEWS</h2>
-                    <ul class="news-list">
-                        <li>
-                            <time class="news-date" datetime="2026-03-20">2026.3.20</time>
-                            <span class="news-title">〇〇先生の世界大会出場が決まりました！</span>
-                        </li>
-                        <li>
-                            <time class="news-date" datetime="2026-04-02">2026.4.2</time>
-                            <span class="news-title">5月の無料体験レッスン受付中</span>
-                        </li>
-                        <li>
-                            <time class="news-date" datetime="2026-04-20">2026.4.20</time>
-                            <span class="news-title">5月からレッスンスケジュールに変更があります。</span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="section section-fee" id="fee">
-                <div class="section-bg-letter section-bg-letter--right" aria-hidden="true">E</div>
-                <div class="section-inner">
-                    <h2 class="section-title">Fee</h2>
-                    <p class="section-lead section-lead--narrow">
-                        月謝・チケット制など、コースに応じた料金プランをご用意しています。詳細はお問い合わせください。
-                    </p>
-                </div>
-            </section>
-
-            <section class="section section-instructor" id="instructor">
-                <div class="section-bg-letter" aria-hidden="true">I</div>
-                <div class="section-inner">
-                    <h2 class="section-title">Instructor</h2>
-                    <p class="section-lead section-lead--narrow">
-                        現役で活躍するインストラクターが、基礎から丁寧にサポートします。
-                    </p>
-                </div>
-            </section>
-
-            <section class="section section-instagram">
-                <div class="section-inner section-inner--wide">
-                    <div class="instagram-head">
-                        <span class="instagram-bar" aria-hidden="true"></span>
-                        <h2 class="section-title section-title--inline">Instagram</h2>
-                        <p class="instagram-follow">Follow Us</p>
-                    </div>
-                    <div class="instagram-grid" role="list">
-                        <div class="instagram-cell instagram-cell--placeholder" role="listitem">準備中</div>
-                        <div class="instagram-cell instagram-cell--photo" role="listitem" aria-label="タップシューズの写真">
-                            <span class="visually-hidden">ギャラリー画像</span>
+        <div class="below-hero">
+            <span class="below-hero-guide" aria-hidden="true"></span>
+            <main class="site-main">
+                <section class="section section-message" id="message" aria-labelledby="message-heading">
+                    <div class="section-bg-word" aria-hidden="true">MESSAGE</div>
+                    <div class="section-inner section-inner--from-guide">
+                        <h2 id="message-heading" class="section-heading-stack">
+                            <span class="heading-ja">踏み出す一歩が、リズムに変わる。</span>
+                            <span class="heading-en">FIND YOUR BEAT</span>
+                        </h2>
+                        <div class="message-body">
+                            <p>
+                                タップダンスは、ダンスであり、打楽器でもあります。最初はぎこちない音でも、重なり合えば特別なセッションに。「昔から憧れていた」「何か新しいことを始めたい」その一歩を、私たちは全力でサポートします。年齢も経験も関係ありません。あなたのビートを、ここで響かせてみませんか？
+                            </p>
                         </div>
-                        <div class="instagram-cell instagram-cell--placeholder" role="listitem">準備中</div>
-                        <div class="instagram-cell instagram-cell--placeholder" role="listitem">準備中</div>
                     </div>
-                </div>
-            </section>
-        </main>
+                </section>
 
-        <footer class="site-footer" id="contact">
-            <div class="footer-inner">
-                <div class="footer-brand">
+                <section class="section section-features" id="features" aria-labelledby="features-heading">
+                    <div class="section-bg-letter section-bg-letter--features" aria-hidden="true">F</div>
+                    <div class="section-inner section-inner--features">
+                        <h2 id="features-heading" class="section-title section-title--features">Features</h2>
+                        <div class="features-list">
+                            <article class="feature feature--lr">
+                                <span class="feature-num" aria-hidden="true">1</span>
+                                <div class="feature-body">
+                                    <h3 class="feature-title-ja">初心者大歓迎</h3>
+                                    <p class="feature-title-en">Welcome!</p>
+                                    <p class="feature-desc">子供から大人まで幅広い年齢層の方が楽しんでいます</p>
+                                </div>
+                            </article>
+                            <article class="feature feature--rl">
+                                <span class="feature-num" aria-hidden="true">2</span>
+                                <div class="feature-body">
+                                    <h3 class="feature-title-ja">プロの指導</h3>
+                                    <p class="feature-title-en">Professional</p>
+                                    <p class="feature-desc">現役ダンサーから直接学べる環境です</p>
+                                </div>
+                            </article>
+                            <article class="feature feature--lr">
+                                <span class="feature-num" aria-hidden="true">3</span>
+                                <div class="feature-body">
+                                    <h3 class="feature-title-ja">手ぶらで通える</h3>
+                                    <p class="feature-title-en">READY TO TAP!</p>
+                                    <p class="feature-desc">
+                                        タップシューズは無料でレンタル可能。駅近の好立地で、お仕事帰りにもスマートに楽しめます。
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section section-news" id="news" aria-labelledby="news-heading">
+                    <div class="section-bg-letter section-bg-letter--news" aria-hidden="true">N</div>
+                    <div class="section-inner section-inner--from-guide">
+                        <h2 id="news-heading" class="section-title">NEWS</h2>
+                        <ul class="news-list">
+                            <li>
+                                <time class="news-date" datetime="2026-04-20">2026.4.20</time>
+                                <a class="news-link" href="#">〇〇先生の世界大会出場が決まりました！</a>
+                            </li>
+                            <li>
+                                <time class="news-date" datetime="2026-04-02">2026.4.2</time>
+                                <a class="news-link" href="#">5月の無料体験レッスン受付中</a>
+                            </li>
+                            <li>
+                                <time class="news-date" datetime="2026-03-20">2026.3.20</time>
+                                <a class="news-link" href="#">5月からレッスンスケジュールに変更があります。</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section section-instagram" id="instagram" aria-labelledby="instagram-heading">
+                    <div class="section-bg-letter section-bg-letter--insta" aria-hidden="true">I</div>
+                    <div class="section-inner section-inner--wide section-inner--from-guide-narrow">
+                        <div class="instagram-head">
+                            <h2 id="instagram-heading" class="section-title section-title--inline">Instagram</h2>
+                            <a class="instagram-follow" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Follow Us</a>
+                        </div>
+                        <div class="instagram-marquee" aria-label="Instagram ギャラリー（右から左へスクロール）">
+                            <div class="instagram-marquee-inner">
+                                <div class="instagram-track">
+                                    <div class="instagram-cell instagram-cell--placeholder" aria-hidden="true">準備中</div>
+                                    <div class="instagram-cell instagram-cell--photo" role="img" aria-label="タップシューズの写真"></div>
+                                    <div class="instagram-cell instagram-cell--placeholder" aria-hidden="true">準備中</div>
+                                    <div class="instagram-cell instagram-cell--img"><img src="images/instagram1.png" alt="スタジオの様子"></div>
+                                </div>
+                                <div class="instagram-track instagram-track--dup" aria-hidden="true">
+                                    <div class="instagram-cell instagram-cell--placeholder">準備中</div>
+                                    <div class="instagram-cell instagram-cell--photo"></div>
+                                    <div class="instagram-cell instagram-cell--placeholder">準備中</div>
+                                    <div class="instagram-cell instagram-cell--img"><img src="images/instagram1.png" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="site-footer">
+                <div class="footer-inner">
                     <p class="footer-logo">TAP Studio</p>
-                    <p class="footer-tagline">初心者歓迎の TAPダンススクール</p>
-                    <hr class="footer-rule">
-                    <address class="footer-address">
-                        東京都新宿区 ○丁目<br>
-                        <a href="tel:09000000000">090-0000-0000</a>
-                    </address>
-                </div>
-                <div class="footer-nav-block">
-                    <nav class="footer-nav" aria-label="フッターメニュー">
-                        <ul class="footer-nav-row">
-                            <li><a href="#class">Class</a></li>
-                            <li><a href="#schedule">Schedule</a></li>
-                            <li><a href="#fee">Fee</a></li>
-                        </ul>
-                        <ul class="footer-nav-row">
-                            <li><a href="#instructor">Instructor</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </nav>
-                    <a class="footer-cta" href="#contact">体験レッスン 申込はこちら</a>
-                    <div class="footer-social" aria-label="ソーシャルリンク">
-                        <a href="#" class="social-link social-link--ig" aria-label="Instagram">Instagram</a>
-                        <a href="#" class="social-link social-link--x" aria-label="X">X</a>
-                        <a href="#" class="social-link social-link--tt" aria-label="TikTok">TikTok</a>
+                    <div class="footer-aligned">
+                        <nav class="footer-nav" aria-label="フッターメニュー">
+                            <a href="class.html">Class</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="schedule.html">Schedule</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="fee.html">Fee</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="instructor.html">Instructor</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="contact.html">Contact</a>
+                        </nav>
+                        <address class="footer-address">
+                            〒160-0000 東京都新宿区〇丁目<br>
+                            <a href="tel:09000000000">090-0000-0000</a>
+                        </address>
+                        <a class="footer-cta" href="contact.html">体験レッスン申し込みはこちら</a>
+                        <div class="footer-social">
+                            <a href="https://www.instagram.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://twitter.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="X">
+                                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                                <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <p class="footer-copy">© 2026 TAP Studio</p>
                     </div>
                 </div>
-            </div>
-        </footer>
-
-        <a class="float-trial" href="#contact" aria-label="体験レッスン申込">
-            <span class="float-trial-bubble">体験レッスン申込はこちら</span>
-            <span class="float-trial-icon" aria-hidden="true">s</span>
-        </a>
+            </footer>
+        </div>
     </body>
 </html>
