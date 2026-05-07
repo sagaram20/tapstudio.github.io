@@ -18,8 +18,9 @@
     --font-jp: "Noto Sans JP", sans-serif;
     --ease-slow: 0.5s ease;
     --ease-fluid: cubic-bezier(0.4, 0, 0.2, 1);
-    /* PCレイアウト：左縦ガイド（モバイルは未使用でも定義のみ） */
+    /* PCレイアウト：左縦ガイド（視覚的に％と vw を一致させ Features の左右対称に使う） */
     --guide-x-pct: 20%;
+    --guide-x-vw: 20vw;
     --guide-gap: clamp(14px, 2.2vw, 28px);
     --message-content-gap: clamp(2rem, 5vw, 4rem);
     --message-base-left: var(--guide-x-pct);
@@ -73,7 +74,7 @@ ul {
 
 @media (min-width: 769px) {
     .below-hero-guide {
-        left: var(--guide-x-pct);
+        left: var(--guide-x-vw);
         transform: translateX(-50%) scaleX(0.67);
         transform-origin: center top;
     }
@@ -326,8 +327,11 @@ ul {
 .section-inner {
     position: relative;
     z-index: 1;
-    max-width: 760px;
-    margin: 0 auto;
+    max-width: none !important;
+    width: 100% !important;
+    padding-left: 15vw !important;
+    margin-left: 0 !important;
+    margin-right: auto;
 }
 
 .section-inner--wide {
@@ -364,8 +368,8 @@ ul {
 /* MESSAGE：ヒーロー直下との余白多め／見出しは「MESSAGE」の下側から開始 */
 
 .section-message.section {
-    padding-top: clamp(6.75rem, 15vw, 11.25rem);
-    padding-left: clamp(4rem, 20vw, 25rem);
+    padding-top: clamp(10rem, 15vw, 15rem) !important;
+    padding-left: clamp(2rem, 12vw, 15vw);
     padding-right: 5%;
     position: relative;
 }
@@ -373,10 +377,10 @@ ul {
 /* MESSAGE 背後ワード */
 
 .section-bg-word {
-    position: absolute;
-    left: clamp(2rem, 15vw, 20rem);
-    transform: none;
-    top: clamp(2.65rem, 7vw, 4.85rem);
+    position: absolute !important;
+    left: 12vw !important;
+    transform: none !important;
+    top: 15rem !important;
     font-family: var(--font-en);
     font-weight: 700;
     font-size: clamp(4rem, 18vw, 12rem);
@@ -391,12 +395,12 @@ ul {
 /* NEWS / Instagram 背面1文字 */
 
 .section-bg-letter {
-    position: absolute;
-    left: var(--guide-x-pct, 28vw);
+    position: absolute !important;
+    left: 12vw !important;
     transform: translateX(-0.5rem);
     font-family: var(--font-en);
     font-weight: 700;
-    font-size: clamp(8rem, 20vw, 16rem);
+    font-size: clamp(6rem, 15vw, 12rem) !important;
     line-height: 1;
     color: var(--ghost-muted);
     pointer-events: none;
@@ -416,8 +420,12 @@ ul {
 }
 
 .section-bg-letter--features {
-    top: 0.45rem;
-    transform: translateY(-30%) translateX(-14%);
+    /* MESSAGE と同サイズ／色味に近い透かし */
+    font-size: clamp(4rem, 18vw, 12rem) !important;
+    color: rgba(139, 150, 148, 0.08);
+    letter-spacing: 0.03em;
+    top: clamp(12rem, 22vw, 17rem);
+    transform: none;
 }
 
 @media (min-width: 769px) {
@@ -436,7 +444,10 @@ ul {
     }
 
     .section-bg-letter--features {
-        left: clamp(0px, calc(var(--guide-x-pct) - 10.75rem), calc(var(--guide-x-pct) - 2.85rem));
+        top: clamp(13.5rem, 21vw, 18.75rem);
+        /* 半透明 F が「Features」の黒字と約半字かぶさるよう、ガイド（vw）基準で左へ出す */
+        left: max(11px, calc(var(--guide-x-vw) - clamp(13rem, 32vw, 22.75rem)));
+        transform: translateX(-0.4rem);
     }
 }
 
@@ -461,7 +472,7 @@ ul {
     display: block;
     font-family: var(--font-jp);
     font-weight: 700;
-    font-size: clamp(1.22rem, 2.55vw, 1.54rem);
+    font-size: clamp(3rem, 2.55vw, 1.54rem);
     color: var(--text-heading);
     margin-bottom: 0.42rem;
     letter-spacing: 0.045em;
@@ -473,7 +484,7 @@ ul {
     font-family: var(--font-en);
     font-weight: 700;
     font-style: italic;
-    font-size: clamp(1.22rem, 2.55vw, 1.54rem);
+    font-size: clamp(2.5rem, 2.55vw, 1.54rem);
     color: var(--text-heading);
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -483,13 +494,18 @@ ul {
 .message-body {
     position: relative;
     z-index: 1;
+    max-width: 1000px !important;
+    margin-left: 0;
 }
 
 .message-body p {
-    font-size: 0.98rem;
-    line-height: 2.05;
+    font-size: 1.75rem;
+    line-height: 1.8;
     color: var(--text-body);
-    text-align: left;
+    text-align: justify;
+    width: 100%;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
 }
 
 @media (max-width: 768px) {
@@ -519,10 +535,17 @@ ul {
 
     /* スマホは従来寄りに透かし位置 */
     .section-bg-letter--news,
-    .section-bg-letter--insta,
-    .section-bg-letter--features {
+    .section-bg-letter--insta {
         left: 0;
         transform: translateY(-14%);
+    }
+
+    .section-bg-letter--features {
+        left: 12px !important;
+        top: clamp(10rem, 24vw, 13rem);
+        transform: translateX(min(38vw, 4.75rem));
+        font-size: clamp(4rem, 18vw, 11rem) !important;
+        color: rgba(139, 150, 148, 0.08);
     }
 }
 
@@ -534,30 +557,36 @@ ul {
 
 /* ----- Features ----- */
 
+.section-features.section {
+    padding-top: clamp(10rem, 22vw, 17rem);
+    overflow: visible;
+}
+
 .section-title.section-title--features {
     position: relative;
     z-index: 2;
-    margin-bottom: clamp(2.25rem, 5vw, 3.25rem);
+    margin-bottom: clamp(3.5rem, 8vw, 5.5rem);
+    font-size: clamp(2.35rem, 4.6vw, 3.15rem);
 }
 
 .features-list {
     display: flex;
     flex-direction: column;
-    gap: clamp(3rem, 7vw, 5rem);
+    gap: clamp(5.75rem, 14vw, 10.5rem);
 }
 
 .feature {
     position: relative;
     gap: 0.5rem;
-    min-height: clamp(7.75rem, 18vw, 11rem);
+    min-height: clamp(9.5rem, 22vw, 14rem);
 }
 
 .feature-num {
     position: absolute;
     font-family: var(--font-en);
     font-weight: 700;
-    font-style: italic;
-    font-size: clamp(5rem, 17vw, 10rem);
+    font-style: normal;
+    font-size: clamp(6.5rem, 20vw, 12.5rem);
     line-height: 1;
     color: var(--ghost-muted);
     z-index: 0;
@@ -569,27 +598,41 @@ ul {
 }
 
 @media (min-width: 769px) {
-    /* 数字はガイド左、本文はガイド右 */
+    /*
+     * ガイドを viewport と同義の％で参照（コンテナ幅とは一致しないので vw）
+     * 1・3：数字ブロックは「ライン直上」〜ラインギリギリ左で終わる（右揃えでラインへ密着）
+     * 2：左ガイドと対称になり、假想右ガイド（100% − guide）のすぐ右側にグリフがあるイメージ
+     */
+    /* カラム右端ギリギリが縦ガイド（〜28vw）。数字は縦線の直上で右寄せ終端 */
     .feature--lr .feature-num {
-        top: -0.85rem;
-        left: clamp(0.25rem, 2vw, 1.75rem);
-        width: calc(var(--guide-x-pct) - clamp(22px, 2.6vw, 44px));
+        top: clamp(-0.75rem, -1vw, 0rem);
+        left: clamp(
+            clamp(44px, 7vw, 88px),
+            calc(var(--guide-x-pct) - clamp(240px, 34vw, 480px)),
+            calc(var(--guide-x-pct) - 40px)
+        );
+        width: max(200px, calc(var(--guide-x-pct) - clamp(52px, 9vw, 128px)));
         text-align: right;
-        padding-right: clamp(10px, 1.8vw, 22px);
+        padding-right: clamp(2px, 0.45vw, 8px);
         box-sizing: border-box;
     }
 
     .feature--lr .feature-body {
         margin-left: calc(var(--guide-x-pct) + var(--guide-gap));
-        max-width: 32rem;
+        max-width: min(38rem, 54vw);
         text-align: left;
     }
 
-    /* 「2」はより右側／「1」「3」の対極：本文ブロックと数字ゾーンを広く離す */
+    .feature--lr .feature-desc {
+        max-width: min(38rem, 52vw);
+    }
+
+    /* 本文は「2」の左側ゾーン（右側の広い余白とのバランス） */
     .feature--rl .feature-body {
-        margin-left: clamp(14%, 20vw, 22rem);
-        width: calc(var(--guide-x-pct) + clamp(48px, 7vw, 120px));
-        max-width: 22rem;
+        margin-left: clamp(36%, 40vw, 52%);
+        width: min(calc(100% - clamp(260px, 28vw, 360px)), 28rem);
+        max-width: min(30rem, 46vw);
+        margin-right: auto;
         text-align: right;
     }
 
@@ -600,16 +643,24 @@ ul {
     }
 
     .feature--rl .feature-desc {
-        max-width: 26rem;
+        max-width: min(26rem, 46vw);
     }
 
+    /* 假想右ガイドは左線と対称位置（100vw - guide）。そのすぐ右に「2」。切れ防止で max を付与 */
     .feature--rl .feature-num {
-        top: -0.85rem;
-        left: calc(var(--guide-x-pct) + clamp(92px, 12vw, 180px));
-        right: clamp(2px, 1vw, 12px);
-        width: auto;
+        top: clamp(-0.9rem, -1.35vw, 0rem);
+        left: clamp(
+            58vw,
+            calc(100vw - var(--guide-x-vw) + 12px),
+            min(92vw, calc(100vw - clamp(240px, 26vw, 380px)))
+        );
+        right: auto;
+        transform: translateX(0);
+        width: clamp(260px, 26vw, 420px);
         text-align: left;
-        padding-right: clamp(12px, 2vw, 24px);
+        padding-left: clamp(6px, 0.95vw, 14px);
+        padding-right: 0;
+        box-sizing: border-box;
     }
 }
 
@@ -660,27 +711,28 @@ ul {
 .feature-title-ja {
     font-family: var(--font-jp);
     font-weight: 700;
-    font-size: 1.22rem;
+    font-size: clamp(1.42rem, 2.85vw, 1.92rem);
     color: var(--text-heading);
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.42rem;
+    letter-spacing: 0.02em;
 }
 
 .feature-title-en {
     font-family: var(--font-en);
     font-weight: 700;
     font-style: italic;
-    font-size: clamp(1.05rem, 2.8vw, 1.35rem);
+    font-size: clamp(1.28rem, 3.05vw, 1.72rem);
     color: var(--text-heading);
-    letter-spacing: 0.22em;
+    letter-spacing: 0.26em;
     text-transform: uppercase;
-    margin-bottom: 0.85rem;
+    margin-bottom: 1.05rem;
 }
 
 .feature-desc {
-    font-size: 0.96rem;
+    font-size: clamp(1.04rem, 2.05vw, 1.16rem);
     color: var(--text-body);
-    max-width: 28rem;
-    line-height: 1.9;
+    max-width: 32rem;
+    line-height: 2;
 }
 
 /* ----- NEWS ----- */
