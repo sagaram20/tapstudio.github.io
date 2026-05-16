@@ -4,14 +4,154 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Schedule | TAP Studio</title>
+        <meta name="description" content="TAP Studio のレッスンスケジュール。曜日・時間帯ごとのクラス一覧です。">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Oswald:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
         <link rel="stylesheet" href="css/style.css">
-        <style>
-            .placeholder-page { min-height: 50vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4rem 1.5rem; text-align: center; }
-            .placeholder-page h1 { font-family: var(--font-en); font-size: 1.75rem; margin-bottom: 0.75rem; }
-            .placeholder-page a { text-decoration: underline; text-underline-offset: 3px; }
-        </style>
     </head>
     <body>
-        <main class="placeholder-page"><h1>Schedule</h1><p><a href="index.html">トップへ戻る</a></p></main>
+        <header class="site-header site-header--solid">
+            <div class="header-inner">
+                <a class="header-logo" href="index.html">TAP Studio</a>
+                <nav class="header-nav" aria-label="メインメニュー">
+                    <ul>
+                        <li><a href="class.html">Class</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="fee.html">Fee</a></li>
+                        <li><a href="instructor.html">Instructor</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="below-hero">
+            <span class="below-hero-guide" aria-hidden="true"></span>
+
+            <main class="site-main">
+
+                <section class="schedule-intro">
+                    <div class="schedule-intro-ghost" aria-hidden="true">S</div>
+                    <div class="schedule-intro-inner">
+                        <h1 class="schedule-page-title">Schedule</h1>
+                        <ul class="schedule-info-notes" aria-label="スケジュール注意事項">
+                            <li>レッスンは70分制</li>
+                            <li>水曜日はお休みです</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="schedule-section" aria-label="レッスンスケジュール表">
+                    <div class="schedule-table-wrap">
+                        <div class="schedule-table">
+
+                            <!-- ヘッダー行 -->
+                            <div class="sg-corner" aria-hidden="true"></div>
+                            <div class="sg-day-head">Mon</div>
+                            <div class="sg-day-head">Tue</div>
+                            <div class="sg-day-head">Thu</div>
+                            <div class="sg-day-head">Fri</div>
+                            <div class="sg-day-head">Sat</div>
+                            <div class="sg-day-head">Sun</div>
+
+                            <!-- 10:00 -->
+                            <div class="sg-time-cell">
+                                <span class="sg-time-ghost" aria-label="10時00分">10:00</span>
+                            </div>
+                            <div class="sg-cell"><b>KIDS</b><em>Yui</em></div>
+                            <div class="sg-cell"><b>KIDS</b><em>Yui</em></div>
+                            <div class="sg-cell"><b>KIDS</b><em>Hinata</em></div>
+                            <div class="sg-cell"><b>KIDS</b><em>Yui</em></div>
+                            <div class="sg-cell"><b>KIDS</b><em>Hinata</em></div>
+                            <div class="sg-cell sg-cell--empty" aria-label="クラスなし"></div>
+
+                            <!-- 12:00 -->
+                            <div class="sg-time-cell">
+                                <span class="sg-time-ghost" aria-label="12時00分">12:00</span>
+                            </div>
+                            <div class="sg-cell"><b>Senior</b><em>Hinata</em></div>
+                            <div class="sg-cell sg-cell--empty" aria-label="クラスなし"></div>
+                            <div class="sg-cell"><b>Senior</b><em>Hinata</em></div>
+                            <div class="sg-cell"><b>Senior</b><em>Hinata</em></div>
+                            <div class="sg-cell"><b>Junior</b><em>Hinata</em></div>
+                            <div class="sg-cell"><b>Junior</b><em>Yui</em></div>
+
+                            <!-- 17:00 -->
+                            <div class="sg-time-cell">
+                                <span class="sg-time-ghost" aria-label="17時00分">17:00</span>
+                            </div>
+                            <div class="sg-cell"><b>JUNIOR</b><em>Hinata</em></div>
+                            <div class="sg-cell"><b>JUNIOR</b><em>Yui</em></div>
+                            <div class="sg-cell"><b>JUNIOR</b><em>Hinata</em></div>
+                            <div class="sg-cell"><b>JUNIOR</b><em>Hinata</em></div>
+                            <div class="sg-cell"><b>JUNIOR</b><em>Yui</em></div>
+                            <div class="sg-cell"><b>JUNIOR</b><em>Yui</em></div>
+
+                            <!-- 19:00 -->
+                            <div class="sg-time-cell">
+                                <span class="sg-time-ghost" aria-label="19時00分">19:00</span>
+                            </div>
+                            <div class="sg-cell"><b>GENERAL</b><em>Hinata</em></div>
+                            <div class="sg-cell"><b>GENERAL</b><em>Yui</em></div>
+                            <div class="sg-cell"><b>GENERAL</b><em>Yui</em></div>
+                            <div class="sg-cell"><b>GENERAL</b><em>Hinata</em></div>
+                            <div class="sg-cell"><b>GENERAL</b><em>Yui</em></div>
+                            <div class="sg-cell"><b>GENERAL</b><em>Yui</em></div>
+
+                            <!-- 21:00 -->
+                            <div class="sg-time-cell">
+                                <span class="sg-time-ghost" aria-label="21時00分">21:00</span>
+                            </div>
+                            <div class="sg-cell sg-cell--empty" aria-label="クラスなし"></div>
+                            <div class="sg-cell"><b>GENERAL</b><em>Hinata</em></div>
+                            <div class="sg-cell"><b>GENERAL</b><em>Hinata</em></div>
+                            <div class="sg-cell sg-cell--empty" aria-label="クラスなし"></div>
+                            <div class="sg-cell"><b>GENERAL</b><em>Hinata</em></div>
+                            <div class="sg-cell"><b>GENERAL</b><em>Hinata</em></div>
+
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <footer class="site-footer">
+                <div class="footer-inner">
+                    <p class="footer-logo">TAP Studio</p>
+                    <div class="footer-aligned">
+                        <nav class="footer-nav" aria-label="フッターメニュー">
+                            <a href="class.html">Class</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="schedule.html">Schedule</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="fee.html">Fee</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="instructor.html">Instructor</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="contact.html">Contact</a>
+                        </nav>
+                        <address class="footer-address">
+                            〒160-0000 東京都新宿区〇丁目<br>
+                            <a href="tel:09000000000">090-0000-0000</a>
+                        </address>
+                        <a class="footer-cta" href="contact.html">体験レッスン申し込みはこちら</a>
+                        <div class="footer-social">
+                            <a href="https://www.instagram.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://twitter.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="X">
+                                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                                <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <p class="footer-copy">© 2026 TAP Studio</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </body>
 </html>

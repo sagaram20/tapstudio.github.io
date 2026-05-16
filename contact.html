@@ -4,40 +4,205 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Contact | TAP Studio</title>
+        <meta name="description" content="TAP Studio へのお問い合わせ・体験レッスン申し込みはこちら。">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Oswald:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
         <link rel="stylesheet" href="css/style.css">
-        <style>
-            .placeholder-page {
-                min-height: 60vh;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 4rem 1.5rem;
-                text-align: center;
-            }
-            .placeholder-page h1 {
-                font-family: var(--font-en);
-                font-size: 1.75rem;
-                margin-bottom: 0.75rem;
-            }
-            .placeholder-page p {
-                color: var(--text-body);
-                margin-bottom: 1.5rem;
-            }
-            .placeholder-page a {
-                text-decoration: underline;
-                text-underline-offset: 3px;
-            }
-        </style>
     </head>
     <body>
-        <main class="placeholder-page">
-            <h1>Contact</h1>
-            <p>お問い合わせ・体験レッスン申込フォームは準備中です。</p>
-            <p><a href="index.html">トップへ戻る</a></p>
-        </main>
+        <header class="site-header site-header--solid">
+            <div class="header-inner">
+                <a class="header-logo" href="index.html">TAP Studio</a>
+                <nav class="header-nav" aria-label="メインメニュー">
+                    <ul>
+                        <li><a href="class.html">Class</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="fee.html">Fee</a></li>
+                        <li><a href="instructor.html">Instructor</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="below-hero">
+            <span class="below-hero-guide" aria-hidden="true"></span>
+
+            <main class="site-main">
+
+                <!-- Contact タイトル -->
+                <section class="contact-intro">
+                    <div class="contact-intro-ghost" aria-hidden="true">C</div>
+                    <div class="contact-intro-inner">
+                        <div class="contact-title-row">
+                            <h1 class="contact-page-title">Contact</h1>
+                            <p class="contact-page-sub">お問い合わせ</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- お問い合わせフォーム -->
+                <section class="contact-section" aria-labelledby="inquiry-heading">
+                    <h2 id="inquiry-heading" class="contact-section-title">お問い合わせ</h2>
+                    <form class="contact-form" action="#" method="post" novalidate>
+                        <div class="form-field">
+                            <label class="form-label" for="inquiry-name">
+                                <span class="form-label-en">Name</span>
+                                <span class="form-label-sep">/</span>
+                                <span class="form-label-ja">お名前</span>
+                                <span class="form-label-req" aria-hidden="true">*</span>
+                            </label>
+                            <input class="form-input" type="text" id="inquiry-name" name="name" required aria-required="true" autocomplete="name">
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="inquiry-mail">
+                                <span class="form-label-en">Mail</span>
+                                <span class="form-label-sep">/</span>
+                                <span class="form-label-ja">メールアドレス</span>
+                                <span class="form-label-req" aria-hidden="true">*</span>
+                            </label>
+                            <input class="form-input" type="email" id="inquiry-mail" name="email" required aria-required="true" autocomplete="email">
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="inquiry-message">
+                                <span class="form-label-en">Message</span>
+                                <span class="form-label-sep">/</span>
+                                <span class="form-label-ja">お問い合わせ内容</span>
+                            </label>
+                            <textarea class="form-textarea" id="inquiry-message" name="message" rows="6"></textarea>
+                        </div>
+                        <div class="form-submit">
+                            <button class="contact-send-btn" type="submit">SEND</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- 体験レッスン申し込みフォーム -->
+                <section class="contact-section" aria-labelledby="trial-heading">
+                    <h2 id="trial-heading" class="contact-section-title">体験レッスン申し込み</h2>
+                    <form class="contact-form" action="#" method="post" novalidate>
+                        <div class="form-field">
+                            <label class="form-label" for="trial-name">
+                                <span class="form-label-en">Name</span>
+                                <span class="form-label-sep">/</span>
+                                <span class="form-label-ja">お名前</span>
+                                <span class="form-label-req" aria-hidden="true">*</span>
+                            </label>
+                            <input class="form-input" type="text" id="trial-name" name="name" required aria-required="true" autocomplete="name">
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="trial-mail">
+                                <span class="form-label-en">Mail</span>
+                                <span class="form-label-sep">/</span>
+                                <span class="form-label-ja">メールアドレス</span>
+                                <span class="form-label-req" aria-hidden="true">*</span>
+                            </label>
+                            <input class="form-input" type="email" id="trial-mail" name="email" required aria-required="true" autocomplete="email">
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="trial-phone">
+                                <span class="form-label-en">Phone Number</span>
+                                <span class="form-label-sep">/</span>
+                                <span class="form-label-ja">電話番号</span>
+                                <span class="form-label-req" aria-hidden="true">*</span>
+                            </label>
+                            <input class="form-input" type="tel" id="trial-phone" name="phone" required aria-required="true" autocomplete="tel">
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="trial-class">
+                                <span class="form-label-en">Class</span>
+                                <span class="form-label-sep">/</span>
+                                <span class="form-label-ja">ご希望のクラス</span>
+                                <span class="form-label-req" aria-hidden="true">*</span>
+                            </label>
+                            <input class="form-input" type="text" id="trial-class" name="class" required aria-required="true">
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="trial-date">
+                                <span class="form-label-en">Date</span>
+                                <span class="form-label-sep">/</span>
+                                <span class="form-label-ja">ご希望の日時</span>
+                                <span class="form-label-req" aria-hidden="true">*</span>
+                            </label>
+                            <input class="form-input" type="text" id="trial-date" name="date" required aria-required="true">
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="trial-experience">
+                                <span class="form-label-en">experience</span>
+                                <span class="form-label-sep">/</span>
+                                <span class="form-label-ja">ダンス・タップ経験</span>
+                            </label>
+                            <input class="form-input" type="text" id="trial-experience" name="experience">
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="trial-size">
+                                <span class="form-label-en">Size</span>
+                                <span class="form-label-sep">/</span>
+                                <span class="form-label-ja">靴のサイズ（レンタル希望の方のみ）</span>
+                            </label>
+                            <input class="form-input" type="text" id="trial-size" name="size">
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="trial-reason">
+                                <span class="form-label-en">Reason</span>
+                                <span class="form-label-sep">/</span>
+                                <span class="form-label-ja">当スタジオを知ったきっかけ</span>
+                            </label>
+                            <input class="form-input" type="text" id="trial-reason" name="reason">
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="trial-message">
+                                <span class="form-label-en">Message</span>
+                                <span class="form-label-sep">/</span>
+                                <span class="form-label-ja">伝えておきたいこと等</span>
+                            </label>
+                            <textarea class="form-textarea" id="trial-message" name="message" rows="6"></textarea>
+                        </div>
+                        <div class="form-submit">
+                            <button class="contact-send-btn" type="submit">SEND</button>
+                        </div>
+                    </form>
+                </section>
+
+            </main>
+
+            <footer class="site-footer">
+                <div class="footer-inner">
+                    <p class="footer-logo">TAP Studio</p>
+                    <div class="footer-aligned">
+                        <nav class="footer-nav" aria-label="フッターメニュー">
+                            <a href="class.html">Class</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="schedule.html">Schedule</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="fee.html">Fee</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="instructor.html">Instructor</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="contact.html">Contact</a>
+                        </nav>
+                        <address class="footer-address">
+                            〒160-0000 東京都新宿区〇丁目<br>
+                            <a href="tel:09000000000">090-0000-0000</a>
+                        </address>
+                        <a class="footer-cta" href="contact.html">体験レッスン申し込みはこちら</a>
+                        <div class="footer-social">
+                            <a href="https://www.instagram.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://twitter.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="X">
+                                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                                <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <p class="footer-copy">© 2026 TAP Studio</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </body>
 </html>

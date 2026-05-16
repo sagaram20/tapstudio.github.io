@@ -4,14 +4,179 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Fee | TAP Studio</title>
+        <meta name="description" content="TAP Studio の料金案内。入会金・クラス別月謝・キャンペーン情報をご確認ください。">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Oswald:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
         <link rel="stylesheet" href="css/style.css">
-        <style>
-            .placeholder-page { min-height: 50vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4rem 1.5rem; text-align: center; }
-            .placeholder-page h1 { font-family: var(--font-en); font-size: 1.75rem; margin-bottom: 0.75rem; }
-            .placeholder-page a { text-decoration: underline; text-underline-offset: 3px; }
-        </style>
     </head>
     <body>
-        <main class="placeholder-page"><h1>Fee</h1><p><a href="index.html">トップへ戻る</a></p></main>
+        <header class="site-header site-header--solid">
+            <div class="header-inner">
+                <a class="header-logo" href="index.html">TAP Studio</a>
+                <nav class="header-nav" aria-label="メインメニュー">
+                    <ul>
+                        <li><a href="class.html">Class</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="fee.html">Fee</a></li>
+                        <li><a href="instructor.html">Instructor</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="below-hero">
+            <span class="below-hero-guide" aria-hidden="true"></span>
+
+            <main class="site-main">
+
+                <!-- Fee タイトル -->
+                <section class="fee-intro">
+                    <div class="fee-intro-ghost" aria-hidden="true">F</div>
+                    <div class="fee-intro-inner">
+                        <h1 class="fee-page-title">Fee</h1>
+                    </div>
+                </section>
+
+                <!-- CAMPAIGN セクション -->
+                <section class="fee-campaign" aria-labelledby="campaign-heading">
+                    <div class="fee-campaign-ghost" aria-hidden="true">C</div>
+                    <div class="fee-campaign-inner">
+                        <div class="fee-campaign-header">
+                            <h2 id="campaign-heading" class="fee-campaign-title">CAMPAIGN</h2>
+                            <p class="fee-campaign-note">入会金無料キャンペーン実施中！</p>
+                        </div>
+                        <dl class="fee-campaign-details">
+                            <div class="fee-campaign-row">
+                                <dt>期　間：</dt>
+                                <dd>5月1日（水）〜 5月14日（木）</dd>
+                            </div>
+                            <div class="fee-campaign-row">
+                                <dt>対　象：</dt>
+                                <dd>
+                                    <p>下記条件を全て満たしていただいた方</p>
+                                    <ul class="fee-campaign-conds">
+                                        <li>キャンペーン実施期間中に<br>無料体験レッスン受講または申し込み</li>
+                                        <li>InstagramまたはXをフォロー</li>
+                                    </ul>
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </section>
+
+                <!-- 料金設定 01〜05 -->
+                <div class="fee-pricing">
+
+                    <!-- 01 ALL FREE -->
+                    <article class="fee-item fee-item--text" aria-labelledby="fee01-heading">
+                        <div class="fee-item-num" aria-hidden="true">01</div>
+                        <div class="fee-item-body">
+                            <h2 id="fee01-heading" class="fee-item-title">ALL FREE</h2>
+                            <p class="fee-item-price">¥21,780</p>
+                            <p class="fee-item-desc">通い放題。全ての通常レッスンを受講できます。</p>
+                        </div>
+                    </article>
+
+                    <!-- 02 KIDS CLASS -->
+                    <article class="fee-item fee-item--img-right" aria-labelledby="fee02-heading">
+                        <div class="fee-item-num" aria-hidden="true">02</div>
+                        <div class="fee-item-body">
+                            <h2 id="fee02-heading" class="fee-item-title">KIDS CLASS</h2>
+                            <p class="fee-item-price">¥7,700</p>
+                            <p class="fee-item-desc">週1回。楽しみながらリズム感を養います。</p>
+                        </div>
+                        <div class="fee-item-img">
+                            <img src="images/fee-kids.png" alt="キッズクラスのレッスン風景">
+                        </div>
+                    </article>
+
+                    <!-- 03 JUNIOR・GENERAL CLASS -->
+                    <article class="fee-item fee-item--text" aria-labelledby="fee03-heading">
+                        <div class="fee-item-num" aria-hidden="true">03</div>
+                        <div class="fee-item-body">
+                            <h2 id="fee03-heading" class="fee-item-title">JUNIOR・GENERAL CLASS</h2>
+                            <dl class="fee-tiers">
+                                <div class="fee-tier-row">
+                                    <dt class="fee-tier-price">¥7,700</dt>
+                                    <dd class="fee-tier-freq">/ 週1回</dd>
+                                </div>
+                                <div class="fee-tier-row">
+                                    <dt class="fee-tier-price">¥14,300</dt>
+                                    <dd class="fee-tier-freq">/ 週2回</dd>
+                                </div>
+                                <div class="fee-tier-row">
+                                    <dt class="fee-tier-price">¥18,900</dt>
+                                    <dd class="fee-tier-freq">/ 週3回</dd>
+                                </div>
+                            </dl>
+                            <p class="fee-item-desc">ダンスの基礎から、表現力・ステップまで身につけます。</p>
+                        </div>
+                    </article>
+
+                    <!-- 04 SENIOR CLASS -->
+                    <article class="fee-item fee-item--img-right" aria-labelledby="fee04-heading">
+                        <div class="fee-item-num" aria-hidden="true">04</div>
+                        <div class="fee-item-body">
+                            <h2 id="fee04-heading" class="fee-item-title">SENIOR CLASS</h2>
+                            <p class="fee-item-price">¥6,600</p>
+                            <p class="fee-item-desc">週1回。楽しみながら足元から健康習慣作りをします。</p>
+                        </div>
+                        <div class="fee-item-img">
+                            <img src="images/fee-senior.png" alt="シニアクラスのレッスン風景">
+                        </div>
+                    </article>
+
+                    <!-- 05 入会金 -->
+                    <article class="fee-item fee-item--registration" aria-labelledby="fee05-heading">
+                        <div class="fee-item-num fee-item-num--large" aria-hidden="true">05</div>
+                        <div class="fee-item-body fee-item-body--registration">
+                            <h2 id="fee05-heading" class="fee-registration-label">入会金</h2>
+                            <p class="fee-registration-price">¥ 10,000</p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </main>
+
+            <footer class="site-footer">
+                <div class="footer-inner">
+                    <p class="footer-logo">TAP Studio</p>
+                    <div class="footer-aligned">
+                        <nav class="footer-nav" aria-label="フッターメニュー">
+                            <a href="class.html">Class</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="schedule.html">Schedule</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="fee.html">Fee</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="instructor.html">Instructor</a>
+                            <span class="footer-nav-sep" aria-hidden="true">/</span>
+                            <a href="contact.html">Contact</a>
+                        </nav>
+                        <address class="footer-address">
+                            〒160-0000 東京都新宿区〇丁目<br>
+                            <a href="tel:09000000000">090-0000-0000</a>
+                        </address>
+                        <a class="footer-cta" href="contact.html">体験レッスン申し込みはこちら</a>
+                        <div class="footer-social">
+                            <a href="https://www.instagram.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://twitter.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="X">
+                                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                                <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <p class="footer-copy">© 2026 TAP Studio</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </body>
 </html>
