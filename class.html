@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <header class="site-header">
+        <header class="site-header site-header--solid">
             <div class="header-inner">
                 <a class="header-logo" href="index.html">TAP Studio</a>
                 <nav class="header-nav" aria-label="メインメニュー">
@@ -27,79 +27,84 @@
             </div>
         </header>
 
-        <section class="page-banner" aria-label="Classページ">
-            <div class="page-banner-ghost" aria-hidden="true">C</div>
-            <div class="page-banner-copy">
-                <p class="page-banner-label">クラス紹介</p>
-                <h1 class="page-banner-title">Class</h1>
-            </div>
-        </section>
-
         <div class="below-hero">
             <span class="below-hero-guide" aria-hidden="true"></span>
+            <span class="class-guide-right" aria-hidden="true"></span>
 
-            <main class="site-main site-main--class">
-                <span class="site-main-guide-right" aria-hidden="true"></span>
+            <main class="site-main">
 
+                <!-- Class タイトル -->
+                <section class="class-intro">
+                    <div class="class-intro-ghost" aria-hidden="true">C</div>
+                    <div class="class-intro-inner">
+                        <h1 class="class-page-title">Class</h1>
+                    </div>
+                </section>
+
+                <!-- KIDS -->
                 <section class="class-section class-section--lr" id="kids" aria-labelledby="kids-heading">
                     <div class="class-ghost class-ghost--left" aria-hidden="true">K</div>
-                    <div class="class-content class-content--lr">
-                        <div class="class-body">
-                            <p class="class-name-en">KIDS</p>
-                            <h2 id="kids-heading" class="class-name-ja">キッズクラス</h2>
-                            <p class="class-target">対象：4歳〜小学生</p>
-                            <p class="class-desc"><strong>「遊び」が「リズム」に変わる、魔法の時間。</strong>子どもたちの好奇心を音に乗せて、リズム感・集中力・表現力を育てます。楽しく体を動かしながら、発表会への出演機会も。笑顔と自信がどんどん育まれていきます。</p>
-                        </div>
+                    <div class="class-inner">
+                        <p class="class-name-en">KIDS</p>
+                        <h2 id="kids-heading" class="class-name-ja">キッズクラス</h2>
+                        <p class="class-target">対象：4歳〜小学生</p>
+                        <p class="class-desc"><strong>「遊び」が「リズム」に変わる、魔法の時間。</strong><br>少しずつ複雑なステップに挑戦し、自分を表現する楽しさを学びます。仲間と一緒にリズムを合わせる一体感は、この時期ならではのかけがえのない経験に。</p>
+                        <p class="class-extra-line"><strong>Point！：</strong>集中力やリズム感はもちろん、挨拶やマナーも自然と身につきます。</p>
+                        <p class="class-extra-line"><strong>雰囲気：</strong>とにかく賑やかで笑顔がいっぱい！</p>
                         <div class="class-img-wrap">
                             <img src="images/kids-class.png" alt="キッズクラスの様子">
                         </div>
                     </div>
                 </section>
 
+                <!-- JUNIOR -->
                 <section class="class-section class-section--rl" id="junior" aria-labelledby="junior-heading">
                     <div class="class-ghost class-ghost--right" aria-hidden="true">J</div>
-                    <div class="class-content class-content--rl">
-                        <div class="class-body">
-                            <p class="class-name-en">JUNIOR</p>
-                            <h2 id="junior-heading" class="class-name-ja">ジュニアクラス</h2>
-                            <p class="class-target">対象：中学生〜高校生</p>
-                            <p class="class-desc"><strong>個性が響き出す。自分だけのビートを見つけよう。</strong>音楽と体を使って自分を表現する楽しさを体感できるクラスです。テクニックを磨きながら、舞台での表現力も高めていきます。仲間とともに成長できる環境です。</p>
-                        </div>
+                    <div class="class-inner">
+                        <p class="class-name-en">JUNIOR</p>
+                        <h2 id="junior-heading" class="class-name-ja">ジュニアクラス</h2>
+                        <p class="class-target">対象：中学生〜高校生</p>
+                        <p class="class-desc"><strong>個性が響き出す。自分だけのビートを見つけよう。</strong><br>少しずつ複雑なステップに挑戦し、自分を表現する楽しさを学びます。仲間と一緒にリズムを合わせる一体感はこの時期ならではのかけがえのない経験に。</p>
+                        <p class="class-extra-line"><strong>Point！：</strong>基礎体力の向上とともに、一つのことをやり遂げる「自信」を育てます。</p>
+                        <p class="class-extra-line"><strong>雰囲気：</strong>切磋琢磨しながら、みんなでカッコよく踊る達成感を大切にしています。</p>
                         <div class="class-img-wrap">
                             <img src="images/junior-class.png" alt="ジュニアクラスの様子">
                         </div>
                     </div>
                 </section>
 
+                <!-- GENERAL -->
                 <section class="class-section class-section--lr" id="general" aria-labelledby="general-heading">
                     <div class="class-ghost class-ghost--left" aria-hidden="true">G</div>
-                    <div class="class-content class-content--lr">
-                        <div class="class-body">
-                            <p class="class-name-en">GENERAL</p>
-                            <h2 id="general-heading" class="class-name-ja">ゼネラルクラス</h2>
-                            <p class="class-target">対象：18歳〜</p>
-                            <p class="class-desc"><strong>日常をビートに変えて。大人が夢中になれる、音の遊び場。</strong>初心者から経験者まで幅広く参加できるクラスです。仕事帰りでも気軽に通える環境で、自分のペースで楽しく上達できます。</p>
-                        </div>
+                    <div class="class-inner">
+                        <p class="class-name-en">GENERAL</p>
+                        <h2 id="general-heading" class="class-name-ja">ゼネラルクラス</h2>
+                        <p class="class-target">対象：18歳〜</p>
+                        <p class="class-desc"><strong>日常をビートに変えて。大人が夢中になれる、音の遊び場。</strong><br>少しずつ複雑なステップに挑戦し、自分を表現する楽しさを学びます。仕事帰りでも通いやすい環境で、大人だからこそ楽しめる表現を追求できます。</p>
+                        <p class="class-extra-line"><strong>Point！：</strong>18時以降のクラスも充実。途中入会・体験レッスン随時受付中です。</p>
+                        <p class="class-extra-line"><strong>雰囲気：</strong>リラックスしながら楽しく続けられる、大人のための居心地のいい空間です。</p>
                         <div class="class-img-wrap">
                             <img src="images/general-class.png" alt="ゼネラルクラスの様子">
                         </div>
                     </div>
                 </section>
 
+                <!-- SENIOR -->
                 <section class="class-section class-section--rl" id="senior" aria-labelledby="senior-heading">
                     <div class="class-ghost class-ghost--right" aria-hidden="true">S</div>
-                    <div class="class-content class-content--rl">
-                        <div class="class-body">
-                            <p class="class-name-en">SENIOR</p>
-                            <h2 id="senior-heading" class="class-name-ja">シニアクラス</h2>
-                            <p class="class-target">対象：50歳〜</p>
-                            <p class="class-desc"><strong>音を楽しみ、健やかに。足元から始める健康習慣。</strong>タップダンスは全身運動で、足元からの刺激が脳と体を活性化します。無理なく楽しめるペースで、仲間と一緒に笑いながら体を動かしましょう。</p>
-                        </div>
+                    <div class="class-inner">
+                        <p class="class-name-en">SENIOR</p>
+                        <h2 id="senior-heading" class="class-name-ja">シニアクラス</h2>
+                        <p class="class-target">対象：50歳〜</p>
+                        <p class="class-desc"><strong>音を楽しみ、健やかに。足元から始める健康習慣。</strong><br>少しずつ複雑なステップに挑戦し、自分を表現する楽しさを学びます。体に無理なく続けられるペースで、健康増進と楽しさを両立できます。</p>
+                        <p class="class-extra-line"><strong>Point！：</strong>転倒予防・脳の活性化にも効果的。ゆっくりしたペースで安心して始められます。</p>
+                        <p class="class-extra-line"><strong>雰囲気：</strong>笑いと元気あふれる、和やかな仲間との楽しい時間です。</p>
                         <div class="class-img-wrap">
                             <img src="images/senior-class.png" alt="シニアクラスの様子">
                         </div>
                     </div>
                 </section>
+
             </main>
 
             <footer class="site-footer">
