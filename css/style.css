@@ -9,7 +9,7 @@
     --footer-text: #333333;
     --line-guide: #e0e0e0;
     /* 薄グレー装飾: #8b9694 を透明度 ～10% */
-    --ghost-muted: rgba(139, 150, 148, 0.16);
+    --ghost-muted: rgba(139, 150, 148, 0.11);
     --ghost-soft: rgba(139, 150, 148, 0.06);
     --instagram-follow: #2a6a9a;
     --footer-cta-border: rgba(171, 213, 189, 0.45);
@@ -959,7 +959,7 @@ ul {
 
 .class-intro {
     position: relative;
-    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.75rem, 6vw, 4rem);
+    padding: clamp(4rem, 9vw, 6.5rem) clamp(1.75rem, 6vw, 4rem);
     overflow: hidden;
 }
 
@@ -994,7 +994,7 @@ ul {
 
 .class-section {
     position: relative;
-    padding: clamp(4rem, 10vw, 7rem) clamp(1.75rem, 6vw, 4rem);
+    padding: clamp(3rem, 7vw, 5rem) clamp(1.75rem, 6vw, 4rem);
     overflow: hidden;
 }
 
@@ -1002,7 +1002,7 @@ ul {
     position: absolute;
     font-family: var(--font-en);
     font-weight: 700;
-    font-size: clamp(28rem, 80vw, 75rem);
+    font-size: clamp(22rem, 52vw, 42rem);
     line-height: 1;
     color: var(--ghost-muted);
     pointer-events: none;
@@ -1035,21 +1035,21 @@ ul {
     font-family: var(--font-en);
     font-weight: 700;
     font-style: italic;
-    font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
     color: var(--text-heading);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     line-height: 1;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
 }
 
 .class-name-ja {
     font-family: var(--font-jp);
     font-weight: 700;
-    font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
     color: var(--text-heading);
     letter-spacing: 0.04em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
     line-height: 1.3;
 }
 
@@ -1059,7 +1059,7 @@ ul {
     font-size: 1rem;
     color: rgba(51, 51, 51, 0.6);
     letter-spacing: 0.06em;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.45rem;
     padding-left: 0.75rem;
     border-left: 2px solid var(--line-guide);
 }
@@ -1072,17 +1072,17 @@ ul {
 
 .class-desc {
     font-family: var(--font-jp);
-    font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+    font-size: clamp(1.05rem, 2.2vw, 1.35rem);
     color: var(--text-body);
-    line-height: 2;
+    line-height: 1.85;
 }
 
 .class-desc strong {
     display: block;
     font-weight: 700;
-    font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+    font-size: clamp(1.2rem, 2.5vw, 1.75rem);
     color: var(--text-heading);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.1rem;
 }
 
 .class-extra-line {
@@ -1113,6 +1113,10 @@ ul {
     height: auto;
     border-radius: 12px;
     object-fit: cover;
+}
+
+.site-main .class-section:last-child {
+    padding-bottom: clamp(6rem, 12vw, 9rem);
 }
 
 .class-guide-right {
@@ -1168,7 +1172,7 @@ ul {
 
 .schedule-intro {
     position: relative;
-    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.75rem, 6vw, 4rem);
+    padding: clamp(4.5rem, 10vw, 7rem) clamp(1.75rem, 6vw, 4rem) clamp(2.5rem, 6vw, 4.5rem);
     overflow: hidden;
 }
 
@@ -1181,8 +1185,9 @@ ul {
     color: var(--ghost-muted);
     pointer-events: none;
     z-index: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: auto;
+    bottom: clamp(2.5rem, 6vw, 4.5rem);
+    transform: none;
     left: clamp(0.5rem, 3vw, 1.5rem);
 }
 
@@ -1228,7 +1233,7 @@ ul {
 
 /* Schedule grid */
 .schedule-section {
-    padding: clamp(1rem, 3vw, 2rem) clamp(1.75rem, 6vw, 4rem) clamp(6rem, 14vw, 10rem);
+    padding: clamp(4rem, 8vw, 6rem) clamp(1.75rem, 6vw, 4rem) clamp(6rem, 14vw, 10rem);
 }
 
 .schedule-table-wrap {
@@ -1238,9 +1243,9 @@ ul {
 
 .schedule-table {
     display: grid;
-    grid-template-columns: clamp(3rem, 6.5vw, 5rem) repeat(6, 1fr);
-    min-width: 520px;
-    width: 100%;
+    grid-template-columns: clamp(3rem, 6.5vw, 5rem) repeat(6, clamp(90px, 10vw, 120px));
+    width: fit-content;
+    margin: 0 auto;
 }
 
 /* Corner cell */
@@ -1269,13 +1274,13 @@ ul {
     position: absolute;
     font-family: var(--font-en);
     font-weight: 700;
-    font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+    font-size: clamp(2.8rem, 5vw, 4rem);
     color: var(--ghost-muted);
     letter-spacing: 0.02em;
     white-space: nowrap;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
+    transform: none;
     pointer-events: none;
     z-index: 0;
 }
@@ -1296,10 +1301,10 @@ ul {
 .sg-cell b {
     display: block;
     font-family: var(--font-en);
-    font-weight: 700;
-    font-size: clamp(0.8rem, 1.55vw, 0.98rem);
+    font-weight: 400;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     color: var(--text-heading);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
     line-height: 1.2;
 }
 
@@ -1308,9 +1313,9 @@ ul {
     font-family: var(--font-jp);
     font-style: normal;
     font-weight: 400;
-    font-size: clamp(0.68rem, 1.25vw, 0.8rem);
+    font-size: clamp(0.85rem, 1.6vw, 1rem);
     color: var(--text-body);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.06em;
 }
 
 .sg-cell--empty {
