@@ -1325,10 +1325,9 @@ ul {
 
 /* ===== Fee Page ===== */
 
-/* Fee intro (ghost F + heading) */
 .fee-intro {
     position: relative;
-    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.75rem, 6vw, 4rem);
+    padding: clamp(2.5rem, 6vw, 4.5rem) 0;
     overflow: hidden;
 }
 
@@ -1344,22 +1343,12 @@ ul {
     top: auto;
     bottom: clamp(2.5rem, 6vw, 4.5rem);
     transform: none;
-    left: clamp(0.5rem, 3vw, 1.5rem);
+    left: 0;
 }
 
 .fee-intro-inner {
     position: relative;
     z-index: 1;
-}
-
-@media (min-width: 769px) {
-    .fee-intro-ghost {
-        left: var(--guide-x-vw);
-    }
-
-    .fee-intro-inner {
-        margin-left: calc(var(--guide-x-vw) + var(--guide-gap) - clamp(1.75rem, 6vw, 4rem) + 2rem);
-    }
 }
 
 .fee-page-title {
@@ -1371,10 +1360,9 @@ ul {
     line-height: 1;
 }
 
-/* CAMPAIGN section */
 .fee-campaign {
     position: relative;
-    padding: clamp(3rem, 7vw, 5rem) clamp(1.75rem, 6vw, 4rem);
+    padding: clamp(3rem, 7vw, 5rem) 0;
     overflow: hidden;
 }
 
@@ -1382,35 +1370,28 @@ ul {
     position: absolute;
     font-family: var(--font-en);
     font-weight: 700;
-    font-size: clamp(16rem, 35vw, 26rem);
+    font-size: clamp(22rem, 45vw, 36rem);
     line-height: 1;
     color: var(--ghost-muted);
     pointer-events: none;
     z-index: 0;
     top: 50%;
     transform: translateY(-50%);
-    left: clamp(-0.5rem, 2vw, 1rem);
+    left: calc(20vw - clamp(1.75rem, 6vw, 4rem));
 }
 
 .fee-campaign-inner {
     position: relative;
     z-index: 1;
-}
-
-@media (min-width: 769px) {
-    .fee-campaign-ghost {
-        left: calc(var(--guide-x-vw) - 6rem);
-    }
-
-    .fee-campaign-inner {
-        margin-left: calc(var(--guide-x-vw) + var(--guide-gap) - clamp(1.75rem, 6vw, 4rem));
-    }
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .fee-campaign-header {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    align-items: flex-end;
+    flex-wrap: nowrap;
     gap: 0.4rem 1.5rem;
     margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
 }
@@ -1421,13 +1402,17 @@ ul {
     font-size: clamp(3.5rem, 7.5vw, 5.5rem);
     color: var(--text-body);
     letter-spacing: 0.04em;
+    white-space: nowrap;
 }
 
 .fee-campaign-note {
     font-family: var(--font-jp);
-    font-weight: 700;
-    font-size: clamp(1.2rem, 2.4vw, 1.5rem);
-    color: var(--text-body);
+    font-weight: 400;
+    font-size: clamp(0.85rem, 1.6vw, 1rem);
+    color: rgba(51, 51, 51, 0.6);
+    letter-spacing: 0.04em;
+    padding-bottom: 0.3em;
+    white-space: nowrap;
 }
 
 .fee-campaign-details {
@@ -1470,9 +1455,8 @@ ul {
     content: "・";
 }
 
-/* Fee pricing items */
 .fee-pricing {
-    padding: clamp(3rem, 7vw, 5rem) clamp(1.75rem, 6vw, 4rem) clamp(7rem, 16vw, 11rem);
+    padding: clamp(3rem, 7vw, 5rem) 0 clamp(11rem, 24vw, 17rem);
 }
 
 .fee-item {
@@ -1481,7 +1465,6 @@ ul {
     overflow: hidden;
 }
 
-/* Divider: horizontal line extending from the left guide */
 .fee-item::before {
     content: '';
     position: absolute;
@@ -1489,16 +1472,10 @@ ul {
     left: 0;
     right: 0;
     height: 1px;
-    background-color: var(--line-guide);
+    background-color: rgba(0, 0, 0, 0.07);
 }
 
-@media (min-width: 769px) {
-    .fee-item::before {
-        left: calc(var(--guide-x-vw) - clamp(1.75rem, 6vw, 4rem));
-    }
-}
-
-/* Ghost numbers (01–05) */
+/* Ghost numbers (01–04): 左垂直ラインのすぐ右に配置 */
 .fee-item-num {
     position: absolute;
     font-family: var(--font-en);
@@ -1510,57 +1487,45 @@ ul {
     z-index: 0;
     top: 50%;
     transform: translateY(-50%);
+    left: calc(20vw - clamp(1.75rem, 6vw, 4rem));
+}
+
+/* 01, 03 ghost: サイズ大きめ（位置は base に準ずる） */
+.fee-item--text .fee-item-num {
+    font-size: clamp(9rem, 20vw, 16rem);
+}
+
+/* ADMISSION FEE ghost: 左端から横断するウォーターマーク */
+.fee-item-num--admission {
     left: 0;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
 }
 
-@media (min-width: 769px) {
-    /* text-only items: ghost straddles left guide */
-    .fee-item--text .fee-item-num {
-        left: calc(var(--guide-x-vw) - clamp(1.75rem, 6vw, 4rem) - 4rem);
-        width: auto;
-        text-align: left;
-        padding-right: 0;
-        box-sizing: content-box;
-    }
-
-    /* image items: ghost straddles left guide, same large size */
-    .fee-item--img-right .fee-item-num {
-        font-size: clamp(7rem, 16vw, 13rem);
-        left: calc(var(--guide-x-vw) - clamp(1.75rem, 6vw, 4rem) - 4rem);
-    }
-
-    .fee-item--img-right {
-        padding-left: calc(var(--guide-x-vw) - clamp(1.75rem, 6vw, 4rem) + var(--guide-gap));
-    }
-
-    .fee-item--img-right .fee-item-body {
-        max-width: clamp(16rem, 34vw, 28rem);
-    }
-}
-
-/* Text-only fee items (01, 03) */
+/* テキストのみのアイテム (01, 03): 中央寄りに */
 .fee-item--text .fee-item-body {
     position: relative;
     z-index: 1;
+    margin-left: clamp(4rem, 25%, 300px);
+    max-width: 680px;
 }
 
-@media (min-width: 769px) {
-    .fee-item--text .fee-item-body {
-        margin-left: calc(var(--guide-x-vw) - clamp(1.75rem, 6vw, 4rem) + clamp(5rem, 11vw, 9rem));
-    }
-}
-
-/* Image fee items (02, 04) */
+/* 画像ありのアイテム (02, 04): テキスト左端・画像右端 */
 .fee-item--img-right {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: clamp(1.5rem, 4vw, 3rem);
 }
 
+/* 02, 04 body: 01/03 とのジグザグのため、少し左寄り */
 .fee-item--img-right .fee-item-body {
     flex: 1;
+    min-width: 0;
     position: relative;
     z-index: 1;
+    padding-left: clamp(1.5rem, 5%, 60px);
 }
 
 .fee-item-img {
@@ -1578,7 +1543,6 @@ ul {
     border-radius: 6px;
 }
 
-/* Shared body styles */
 .fee-item-title {
     font-family: var(--font-en);
     font-weight: 400;
@@ -1633,14 +1597,10 @@ ul {
     line-height: 1.9;
 }
 
-/* Registration fee (05) */
+/* 入会金 (05) */
 .fee-item--registration {
     padding-top: clamp(2.5rem, 6vw, 4rem);
     padding-bottom: clamp(2.5rem, 6vw, 4rem);
-}
-
-.fee-item-num--large {
-    font-size: clamp(7rem, 18vw, 13rem) !important;
 }
 
 .fee-item-body--registration {
@@ -1648,29 +1608,23 @@ ul {
     z-index: 1;
 }
 
-@media (min-width: 769px) {
-    .fee-item-body--registration {
-        margin-left: calc(var(--guide-x-vw) - clamp(1.75rem, 6vw, 4rem) + var(--guide-gap));
-    }
-}
-
 .fee-registration-label {
     font-family: var(--font-jp);
     font-weight: 700;
-    font-size: clamp(1rem, 2.2vw, 1.35rem);
-    color: var(--text-body);
+    font-size: clamp(1.4rem, 2.8vw, 2rem);
+    color: var(--text-heading);
+    letter-spacing: 0.1em;
     margin-bottom: 0.4rem;
 }
 
 .fee-registration-price {
-    font-family: var(--font-jp);
-    font-weight: 700;
+    font-family: var(--font-en);
+    font-weight: 400;
     font-size: clamp(1.85rem, 4.5vw, 3rem);
     color: var(--text-heading);
     letter-spacing: 0.08em;
 }
 
-/* Mobile adjustments */
 @media (max-width: 768px) {
     .fee-item--img-right {
         flex-wrap: wrap;
@@ -1680,6 +1634,14 @@ ul {
         flex: none;
         width: clamp(140px, 38vw, 200px);
     }
+}
+
+/* fee-content-wrap: 1200px の箱を画面中央に置き、その中にすべてを左揃えで収める */
+.fee-content-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1.75rem, 6vw, 4rem);
+    position: relative;
 }
 
 /* ----- Footer ----- */
