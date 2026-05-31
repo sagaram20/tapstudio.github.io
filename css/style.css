@@ -439,7 +439,7 @@ ul {
     }
 
     .section-bg-letter--news {
-        left: clamp(0.75rem, 2.6vw, 2rem);
+        left: var(--guide-x-vw);
     }
 
     /* 「I」はINSTAGRAMの頭文字Iの左側に重なるようガイドラインに配置 */
@@ -447,9 +447,9 @@ ul {
         left: var(--guide-x-vw);
     }
 
-    /* 「F」はFeaturesの頭文字Fの左側に重なるようガイドラインに配置 */
+    /* 「F」はFeaturesタイトル左端の背後に収まるようガイドラインに配置 */
     .section-bg-letter--features {
-        top: clamp(13.5rem, 21vw, 18.75rem);
+        top: clamp(5rem, 11vw, 9rem);
         left: var(--guide-x-vw);
         transform: none;
     }
@@ -459,16 +459,21 @@ ul {
     .section-instagram .section-title {
         margin-left: calc(var(--guide-x-vw) + var(--guide-gap) - clamp(1.75rem, 6vw, 4rem) - 15vw);
     }
+
+    /* NEWSリストもタイトルと同じ左位置から開始 */
+    .section-news .news-list {
+        margin-left: calc(var(--guide-x-vw) + var(--guide-gap) - clamp(1.75rem, 6vw, 4rem) - 15vw);
+    }
 }
 
 .section-title {
     position: relative;
     z-index: 1;
     font-family: var(--font-en);
-    font-weight: 700;
-    font-size: clamp(2rem, 4vw, 2.85rem);
+    font-weight: 400;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     color: var(--text-heading);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     margin-bottom: 2rem;
 }
@@ -569,14 +574,15 @@ ul {
 
 .section-features.section {
     padding-top: clamp(10rem, 22vw, 17rem);
+    padding-bottom: clamp(7rem, 16vw, 12rem);
     overflow: visible;
 }
 
 .section-title.section-title--features {
     position: relative;
     z-index: 2;
-    margin-bottom: clamp(3.5rem, 8vw, 5.5rem);
-    font-size: clamp(2.35rem, 4.6vw, 3.15rem);
+    margin-bottom: clamp(5rem, 10vw, 7rem);
+    font-size: clamp(3rem, 5.5vw, 4rem);
 }
 
 .features-list {
@@ -742,13 +748,14 @@ ul {
     position: relative;
     z-index: 1;
     border-top: 1px solid var(--line-guide);
+    max-width: 38rem;
 }
 
 .news-list li {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 0.65rem 1.35rem;
+    gap: 0.65rem 2rem;
     padding: 1.2rem 0;
     border-bottom: 1px solid var(--line-guide);
     font-size: 0.95rem;
@@ -759,27 +766,29 @@ ul {
     font-weight: 700;
     color: var(--text-heading);
     flex-shrink: 0;
+    min-width: 8rem;
 }
 
 .news-link {
     font-family: var(--font-jp);
     font-weight: 500;
     color: var(--text-body);
-    text-decoration: underline;
-    text-decoration-color: rgba(51, 51, 51, 0.35);
-    text-underline-offset: 4px;
-    transition: color var(--ease-slow), text-decoration-color var(--ease-slow);
+    text-decoration: none;
+    transition: color var(--ease-slow);
 }
 
 .news-link:hover {
     color: var(--text-heading);
-    text-decoration-color: var(--text-heading);
 }
 
 /* ----- Instagram ----- */
 
+.section-news.section {
+    padding-bottom: clamp(7rem, 16vw, 12rem);
+}
+
 .section-instagram.section {
-    padding-bottom: clamp(6.25rem, 14vw, 10.5rem);
+    padding-bottom: clamp(12.5rem, 28vw, 21rem);
 }
 
 .instagram-head {
@@ -959,7 +968,7 @@ ul {
 
 .class-intro {
     position: relative;
-    padding: clamp(4rem, 9vw, 6.5rem) clamp(1.75rem, 6vw, 4rem);
+    padding: clamp(8rem, 14vw, 11rem) clamp(1.75rem, 6vw, 4rem) clamp(5rem, 10vw, 8rem);
     overflow: hidden;
 }
 
@@ -1001,14 +1010,14 @@ ul {
 .class-ghost {
     position: absolute;
     font-family: var(--font-en);
-    font-weight: 700;
+    font-weight: 400;
     font-size: clamp(22rem, 52vw, 42rem);
     line-height: 1;
     color: var(--ghost-muted);
     pointer-events: none;
     z-index: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
+    transform: none;
     white-space: nowrap;
 }
 
@@ -1033,11 +1042,11 @@ ul {
 
 .class-name-en {
     font-family: var(--font-en);
-    font-weight: 700;
-    font-style: italic;
+    font-weight: 400;
+    font-style: normal;
     font-size: clamp(2.2rem, 4.5vw, 3.5rem);
     color: var(--text-heading);
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     line-height: 1;
     margin-bottom: 0.1rem;
@@ -1138,22 +1147,24 @@ ul {
     }
 
     .class-intro-ghost {
+        top: clamp(3.5rem, 7vw, 6rem);
+        bottom: auto;
         left: var(--guide-x-vw);
     }
 
     .class-intro-inner {
-        margin-left: calc(var(--guide-x-vw) + var(--guide-gap) - clamp(1.75rem, 6vw, 4rem));
+        margin-left: calc(var(--guide-x-vw) + var(--guide-gap) - clamp(1.75rem, 6vw, 4rem) + 2rem);
     }
 
     .class-ghost--left {
         left: var(--guide-x-vw);
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%);
     }
 
     .class-ghost--right {
         right: var(--guide-x-vw);
         left: auto;
-        transform: translateX(50%) translateY(-50%);
+        transform: translateX(50%);
     }
 
     .class-section--lr .class-inner {
@@ -1172,7 +1183,7 @@ ul {
 
 .schedule-intro {
     position: relative;
-    padding: clamp(4.5rem, 10vw, 7rem) clamp(1.75rem, 6vw, 4rem) clamp(2.5rem, 6vw, 4.5rem);
+    padding: clamp(8rem, 14vw, 11rem) clamp(1.75rem, 6vw, 4rem) clamp(5rem, 10vw, 8rem);
     overflow: hidden;
 }
 
@@ -1202,6 +1213,8 @@ ul {
 
 @media (min-width: 769px) {
     .schedule-intro-ghost {
+        top: clamp(3.5rem, 7vw, 6rem);
+        bottom: auto;
         left: var(--guide-x-vw);
     }
 
@@ -1327,8 +1340,8 @@ ul {
 
 .fee-intro {
     position: relative;
-    padding: clamp(2.5rem, 6vw, 4.5rem) 0;
-    overflow: hidden;
+    padding: clamp(8rem, 14vw, 11rem) 0 clamp(5rem, 10vw, 8rem);
+    overflow: visible;
 }
 
 .fee-intro-ghost {
@@ -1343,7 +1356,7 @@ ul {
     top: auto;
     bottom: clamp(2.5rem, 6vw, 4.5rem);
     transform: none;
-    left: 0;
+    left: 6px;
 }
 
 .fee-intro-inner {
@@ -1448,6 +1461,11 @@ ul {
 .fee-campaign-conds {
     list-style: none;
     margin-top: 0.35rem;
+}
+
+.fee-campaign-conds li {
+    padding-left: 1em;
+    text-indent: -1em;
 }
 
 .fee-campaign-conds li::before {
@@ -1649,6 +1667,30 @@ ul {
     }
 }
 
+@media (min-width: 769px) {
+    .fee-intro-ghost {
+        top: clamp(3.5rem, 7vw, 6rem);
+        bottom: auto;
+        left: calc(var(--guide-x-vw) + 6px - clamp(1.75rem, 6vw, 4rem));
+    }
+
+    .fee-intro-inner {
+        margin-left: calc(var(--guide-x-vw) + var(--guide-gap) + 2rem - clamp(1.75rem, 6vw, 4rem));
+    }
+}
+
+/* fee-content-wrap が max-width: 1200px で中央揃えになる幅では
+   ghost と inner の left を viewport 基準で左ラインに合わせ直す */
+@media (min-width: 1200px) {
+    .fee-intro-ghost {
+        left: calc(-30vw + 606px - 4rem);
+    }
+
+    .fee-intro-inner {
+        margin-left: calc(-30vw + 600px + var(--guide-gap) - 2rem);
+    }
+}
+
 /* fee-content-wrap: 1200px の箱を画面中央に置き、その中にすべてを左揃えで収める */
 .fee-content-wrap {
     max-width: 1200px;
@@ -1732,7 +1774,7 @@ ul {
 }
 
 .footer-cta {
-    margin-top: clamp(2.35rem, 5.25vw, 3.35rem);
+    margin-top: clamp(1.5rem, 3.5vw, 2.25rem);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1807,7 +1849,7 @@ ul {
     }
 
     .footer-logo {
-        margin-bottom: clamp(3.25rem, 6.5vw, 4.75rem);
+        margin-bottom: clamp(2.25rem, 4.5vw, 3.25rem);
     }
 
     .footer-aligned {
@@ -1873,7 +1915,7 @@ ul {
 
 .instructor-intro {
     position: relative;
-    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.75rem, 6vw, 4rem);
+    padding: clamp(8rem, 14vw, 11rem) clamp(1.75rem, 6vw, 4rem) clamp(5rem, 10vw, 8rem);
     overflow: hidden;
 }
 
@@ -1883,8 +1925,9 @@ ul {
     font-weight: 700;
     font-size: clamp(6rem, 14vw, 10rem);
     color: var(--ghost-muted);
-    top: 50%;
-    transform: translateY(-50%);
+    top: auto;
+    bottom: clamp(2.5rem, 6vw, 4.5rem);
+    transform: none;
     left: clamp(0.5rem, 3vw, 1.5rem);
     pointer-events: none;
     z-index: 0;
@@ -1903,7 +1946,8 @@ ul {
     color: var(--text-heading);
     letter-spacing: 0.04em;
     line-height: 1;
-    margin-bottom: 0.4rem;
+    margin-top: 0;
+    margin-bottom: clamp(0.8rem, 2vw, 1.5rem);
 }
 
 .instructor-page-sub {
@@ -1917,21 +1961,20 @@ ul {
 
 .instructor-section {
     position: relative;
-    padding: clamp(3rem, 7vw, 5.5rem) clamp(1.75rem, 6vw, 4rem);
+    padding: clamp(5rem, 11vw, 9rem) clamp(1.75rem, 6vw, 4rem);
     overflow: hidden;
 }
 
 .instructor-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: var(--line-guide);
+    display: none;
 }
 
-.instructor-name-block {
+.instructor-section:last-of-type {
+    padding-bottom: clamp(14rem, 30vw, 24rem);
+}
+
+/* 名前ブロック: ゴーストはフロー要素、漢字は逆側に寄せてネガマージンで重ねる */
+.instructor-name-wrap {
     position: relative;
     margin-bottom: clamp(1.5rem, 3.5vw, 2.5rem);
 }
@@ -1939,14 +1982,16 @@ ul {
 .instructor-ghost-name {
     display: block;
     font-family: var(--font-en);
-    font-weight: 700;
     font-style: italic;
-    font-size: clamp(2rem, 5.5vw, 4rem);
-    color: var(--ghost-muted);
+    font-weight: 700;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    color: rgba(0, 0, 0, 0.06);
+    white-space: nowrap;
     pointer-events: none;
+    z-index: 0;
+    letter-spacing: 0.06em;
     line-height: 1;
     position: relative;
-    z-index: 0;
 }
 
 .instructor-section--lr .instructor-ghost-name {
@@ -1957,11 +2002,6 @@ ul {
     text-align: right;
 }
 
-.ghost-fn {
-    font-size: 0.55em;
-    vertical-align: baseline;
-}
-
 .instructor-name-ja {
     display: block;
     font-family: var(--font-jp);
@@ -1969,12 +2009,22 @@ ul {
     font-size: clamp(1.6rem, 3.2vw, 2.25rem);
     color: var(--text-heading);
     letter-spacing: 0.15em;
-    text-align: center;
     position: relative;
     z-index: 1;
-    margin-top: -1.3em;
+    margin-top: -0.7em;
+    line-height: 1.2;
+    padding-bottom: 0.3em;
 }
 
+.instructor-section--lr .instructor-name-ja {
+    text-align: right;
+}
+
+.instructor-section--rl .instructor-name-ja {
+    text-align: left;
+}
+
+/* コンテンツ: 写真 + テキスト */
 .instructor-content {
     display: flex;
     align-items: flex-start;
@@ -1998,7 +2048,7 @@ ul {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: clamp(1.25rem, 3vw, 2rem);
+    gap: clamp(2rem, 4.5vw, 3.5rem);
 }
 
 .instructor-block-title {
@@ -2007,7 +2057,7 @@ ul {
     font-size: clamp(0.82rem, 1.5vw, 0.9rem);
     color: var(--text-heading);
     letter-spacing: 0.12em;
-    margin-bottom: 0.65rem;
+    margin-bottom: 1rem;
     border-left: 2px solid var(--line-guide);
     padding-left: 0.75rem;
 }
@@ -2016,34 +2066,45 @@ ul {
     font-family: var(--font-jp);
     font-size: clamp(0.88rem, 1.65vw, 0.96rem);
     color: var(--text-body);
-    line-height: 2;
+    line-height: 2.3;
 }
 
 @media (min-width: 769px) {
     .instructor-intro-ghost {
+        position: absolute;
+        top: clamp(3.5rem, 7vw, 6rem);
+        bottom: auto;
+        transform: none;
         left: var(--guide-x-vw);
     }
 
     .instructor-intro-inner {
-        margin-left: calc(var(--guide-x-vw) + var(--guide-gap) - clamp(1.75rem, 6vw, 4rem));
+        margin-left: calc(var(--guide-x-vw) + var(--guide-gap) - clamp(1.75rem, 6vw, 4rem) + 2rem);
     }
 
-    .instructor-section::before {
-        left: calc(var(--guide-x-vw) - clamp(1.75rem, 6vw, 4rem));
-    }
-
-    .instructor-section--lr .instructor-name-block,
-    .instructor-section--lr .instructor-content {
+    /* 名前: fit-contentでゴースト幅に収め、テキストの重なりを作る */
+    .instructor-section--lr .instructor-name-wrap {
+        width: fit-content;
         margin-left: calc(var(--guide-x-vw) - clamp(1.75rem, 6vw, 4rem));
+        margin-right: 0;
     }
 
-    .instructor-section--rl .instructor-name-block,
+    .instructor-section--rl .instructor-name-wrap {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: calc(var(--guide-x-vw) - clamp(1.75rem, 6vw, 4rem));
+    }
+
+    /* コンテンツ（写真＋テキスト）: 両ガイドライン内に収める */
+    .instructor-section--lr .instructor-content,
     .instructor-section--rl .instructor-content {
+        margin-left: calc(var(--guide-x-vw) - clamp(1.75rem, 6vw, 4rem));
         margin-right: calc(var(--guide-x-vw) - clamp(1.75rem, 6vw, 4rem));
     }
 
     .instructor-content {
         flex-direction: row;
+        align-items: stretch;
     }
 
     .instructor-section--rl .instructor-content {
@@ -2055,6 +2116,16 @@ ul {
         width: auto;
         max-width: none;
     }
+
+    .instructor-img img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .instructor-bio {
+        justify-content: space-evenly;
+        padding: clamp(1rem, 3vw, 2rem) 0;
+    }
 }
 
 /* ============================================================
@@ -2063,7 +2134,7 @@ ul {
 
 .contact-intro {
     position: relative;
-    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.75rem, 6vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+    padding: clamp(8rem, 14vw, 11rem) clamp(1.75rem, 6vw, 4rem) clamp(5rem, 10vw, 8rem);
     overflow: hidden;
 }
 
@@ -2073,8 +2144,9 @@ ul {
     font-weight: 700;
     font-size: clamp(6rem, 14vw, 10rem);
     color: var(--ghost-muted);
-    top: 50%;
-    transform: translateY(-50%);
+    top: auto;
+    bottom: clamp(2.5rem, 6vw, 4.5rem);
+    transform: none;
     left: clamp(0.5rem, 3vw, 1.5rem);
     pointer-events: none;
     z-index: 0;
@@ -2240,11 +2312,13 @@ ul {
 
 @media (min-width: 769px) {
     .contact-intro-ghost {
+        top: clamp(3.5rem, 7vw, 6rem);
+        bottom: auto;
         left: var(--guide-x-vw);
     }
 
     .contact-intro-inner {
-        margin-left: calc(var(--guide-x-vw) + var(--guide-gap) - clamp(1.75rem, 6vw, 4rem));
+        margin-left: calc(var(--guide-x-vw) + var(--guide-gap) - clamp(1.75rem, 6vw, 4rem) + 2rem);
     }
 
     .contact-section::before {
