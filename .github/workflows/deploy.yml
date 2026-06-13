@@ -13,19 +13,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.XSERVER_SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -p 10022 sv17103.xserver.jp >> ~/.ssh/known_hosts
-
-      - name: Deploy via rsync
-        run: |
-          rsync -avz --delete \
-            --exclude='.git/' \
-            --exclude='.github/' \
-            --exclude='.vscode/' \
-            --exclude='*.md' \
-            -e "ssh -p 10022 -i ~/.ssh/id_rsa" \
-            ./ ${{ secrets.XSERVER_USERNAME }}@${{ secrets.XSERVER_HOST }}:${{ secrets.XSERVER_DEPLOY_PATH }}/
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.XSERVER_HOST }}
+          username: ${{ secrets.XSERVER_USERNAME }}
+          password: ${{ secrets.XSERVER_FTP_PASSWORD }}
+          server-dir: tapstudio.jp/public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.vscode/**
+            **/requirement.md
+            **/README.md
